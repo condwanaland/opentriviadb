@@ -4,18 +4,24 @@ get_questions <- function(number,
                           type = c("any", "multiple", "boolean")){
 
   diff <- match.arg(difficulty)
+  type <- match.arg(type)
 
   baseurl <- "https://opentdb.com/api.php?"
   number <- as.numeric(number)
   numbered_url <- paste0(baseurl, "amount=", number)
 
-  ## Category
+  ## Create strings for API URL
   category_string <- make_category_string(category)
-
-  ## Difficulty
   difficulty_string <- make_difficulty_string(diff)
+  type_string <- make_type_string(type)
 
-  return(difficulty_string)
+  # Paste URL
+  api_url <- paste0(numbered_url,
+                    category_string,
+                    difficulty_string,
+                    type_string)
+
+  return(api_url)
 
 }
 
@@ -43,6 +49,17 @@ make_difficulty_string <- function(difficulty){
   }
 
   return(difficulty_string)
+}
+
+make_type_string <- function(type){
+  if (type == "any"){
+    type_string <- ""
+  }
+  else{
+    type_string <- paste0("&type=", type)
+  }
+
+  return(type_string)
 }
 
 create_api_call <- function(){

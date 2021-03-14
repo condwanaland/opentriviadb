@@ -12,3 +12,9 @@ test_that("Difficulty string generates correctly", {
   expect_equal(make_difficulty_string("hard"), "&difficulty=hard")
   expect_error(make_difficulty_string(), 'argument "difficulty" is missing')
 })
+
+test_that("Type string generates correctly", {
+  expect_equal(make_type_string("any"), "")
+  expect_equal(make_type_string("multiple"), "&type=multiple")
+  expect_equal(make_type_string("boolean"), "&type=boolean")
+})
