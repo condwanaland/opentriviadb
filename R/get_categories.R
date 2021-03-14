@@ -13,11 +13,10 @@ get_categories <- function(){
   cats <- httr::content(cats, 'parsed')
   cats <- cats$trivia_categories
   cats <- lapply(cats, as.data.frame)
-  cats <- bind_rows(cats)
-  names(cats)[names(cats) == "name"] <- "category"
+  cats <- dplyr::bind_rows(cats)
+  names(cats)[names(cats) == "name"] <- "categories"
 
   return(cats)
 }
-
 
 dat <- get_categories()

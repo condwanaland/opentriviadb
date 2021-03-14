@@ -1,7 +1,7 @@
 library(httr)
 library(jsonlite)
 library(tidyr)
-qs <- GET("https://opentdb.com/api.php?amount=20")
+#qs <- GET("https://opentdb.com/api.php?amount=20")
 
 
 #' parse_raw_data
@@ -40,9 +40,9 @@ add_trivia_class <- function(parsed_data) {
   })
 }
 
-parsed <- parse_raw_data(qs)
-parsed_class <- add_trivia_class(parsed)
-parsed_data <- lapply(parsed_class, parse_trivia_df)
+# parsed <- parse_raw_data(qs)
+# parsed_class <- add_trivia_class(parsed)
+# parsed_data <- lapply(parsed_class, parse_trivia_df)
 
 
 
