@@ -1,4 +1,4 @@
-get_questions <- function(number,
+get_questions <- function(number=10,
                           category,
                           difficulty = c("any", "easy", "medium", "hard"),
                           type = c("any", "multiple", "boolean")){
