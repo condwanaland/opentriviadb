@@ -17,4 +17,5 @@ test_that("Type string generates correctly", {
   expect_equal(make_type_string("any"), "")
   expect_equal(make_type_string("multiple"), "&type=multiple")
   expect_equal(make_type_string("boolean"), "&type=boolean")
+  expect_error(make_type_string(), 'argument "type" is missing')
 })
