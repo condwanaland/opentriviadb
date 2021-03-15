@@ -12,8 +12,20 @@ get_questions <- function(number=10,
 
   api_url <- create_api_url(number, category, difficulty, type)
 
+  # Hit API
+  #api_reponse <- httr::RETRY(GET, api_url)
+  api_response <- GET(api_url)
 
-  return(api_url)
+  # Parse Response
+  parsed <- parse_raw_data(api_response)
+  parsed_class <- add_trivia_class(parsed)
+  parsed_data <- lapply(parsed_class, parse_trivia_df)
+
+  # Bind into single frame
+  full_data <- dplyr::bind_rows(parsed_data)
+
+
+  return(full_data)
 
 }
 

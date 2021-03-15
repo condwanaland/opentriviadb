@@ -11,6 +11,13 @@ parse_trivia_df <- function(data){
   UseMethod("parse_trivia_df")
 }
 
+#' parse_trivia_df.trivia_multi_choice
+#'
+#' @param data
+#'
+#' @return
+#' @export
+#'
 parse_trivia_df.trivia_multi_choice <- function(data){
   united_data <- tidyr::unite(data, col = "possible_answers",
                               5:8, sep = "; ", remove = FALSE)
@@ -18,6 +25,13 @@ parse_trivia_df.trivia_multi_choice <- function(data){
   return(united_data)
 }
 
+#' parse_trivia_df.trivia_boolean
+#'
+#' @param data
+#'
+#' @return
+#' @export
+#'
 parse_trivia_df.trivia_boolean <- function(data){
   data$possible_answers <- "True/False"
   data <- data[c("category", "type", "difficulty",
@@ -25,6 +39,13 @@ parse_trivia_df.trivia_boolean <- function(data){
   return(data)
 }
 
+#' parse_trivia_df.default
+#'
+#' @param data
+#'
+#' @return
+#' @export
+#'
 parse_trivia_df.default <- function(data){
   return(data)
 }
