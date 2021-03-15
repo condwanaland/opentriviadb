@@ -2,37 +2,35 @@ get_questions <- function(number=10,
                           category,
                           difficulty = c("any", "easy", "medium", "hard"),
                           type = c("any", "multiple", "boolean")){
-
-  diff <- match.arg(difficulty)
+  number <- as.numeric(number)
+  difficulty <- match.arg(difficulty)
   type <- match.arg(type)
 
-  baseurl <- "https://opentdb.com/api.php?"
-  number <- as.numeric(number)
-  numbered_url <- paste0(baseurl, "amount=", number)
+  if (number > 50){
+    stop("Number must be less than or equal to 50", call. = FALSE)
+  }
 
-  ## Create strings for API URL
-  category_string <- make_category_string(category)
-  difficulty_string <- make_difficulty_string(diff)
-  type_string <- make_type_string(type)
+  api_url <- create_api_url(number, category, difficulty, type)
 
-  # Paste URL
-  api_url <- paste0(numbered_url,
-                    category_string,
-                    difficulty_string,
-                    type_string)
 
   return(api_url)
 
 }
 
+#' make_category_string
+#'
+#' Builds a string for the category block of the API
+#'
+#' @param category The trivia category
+#' @importFrom rlang .data
 make_category_string <- function(category){
   if (missing(category)){
     category_string <- ""
   }
   else{
     cats <- get_categories()
-    cats <- dplyr::filter(cats, categories == category)
-    cats <- dplyr::select(cats, id)
+    cats <- dplyr::filter(cats, .data$categories == category)
+    cats <- dplyr::select(cats, .data$id)
     cats <- cats[1,1]
     category_string <- paste0("&category=", cats)
   }
@@ -62,6 +60,20 @@ make_type_string <- function(type){
   return(type_string)
 }
 
-create_api_call <- function(){
+create_api_url <- function(number, category, difficulty, type){
+  baseurl <- "https://opentdb.com/api.php?"
+  numbered_url <- paste0(baseurl, "amount=", number)
 
+  ## Create strings for API URL
+  category_string <- make_category_string(category)
+  difficulty_string <- make_difficulty_string(difficulty)
+  type_string <- make_type_string(type)
+
+  # Paste URL
+  api_url <- paste0(numbered_url,
+                    category_string,
+                    difficulty_string,
+                    type_string)
+
+  return(api_url)
 }

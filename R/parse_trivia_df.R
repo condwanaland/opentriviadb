@@ -4,8 +4,9 @@
 #'
 #' @param data A dataframe with either the 'trivia_multi_choice' or 'trivia_boolean' class. Usually this is the output of the `add_trivia_class` function
 #'
-#' @return a list of dataframes
+#' @importFrom dplyr starts_with
 #'
+#' @return a list of dataframes
 parse_trivia_df <- function(data){
   UseMethod("parse_trivia_df")
 }
