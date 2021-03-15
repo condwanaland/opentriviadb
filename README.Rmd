@@ -1,0 +1,64 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# triviaq
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of triviaq is to provide an interface to the [Open Trivia Database](https://opentdb.com/). You can access and download samples of the questions available and make them available from within R.
+
+## Installation
+
+You can install the released version of triviaq from [CRAN](https://CRAN.R-project.org) with:
+
+``` r
+install.packages("triviaq")
+```
+
+And the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("condwanaland/triviaq")
+```
+## Example
+
+To download questions, simply call `get_questions()`
+
+```{r example}
+library(triviaq)
+dat <- get_questions(number = 10)
+dat
+```
+
+You can control the category, difficulty, and type (multiple choice/boolean) of the returned questions
+
+```{r}
+dat <- get_questions(10, category = "Sports", difficulty = "easy", type = "multiple")
+dat
+```
+
+To view all available categories, `triviaq` provides a helper function `get_categories`, which provides a dataframe of all available categories.
+
+```{r}
+categories <- get_categories()
+categories
+```
+
+
+## Roadmap
+* Incorporate session tokens to eliminate repeated questions
+* Get more than 50 questions by repeatedly hitting the API and saving intermediates

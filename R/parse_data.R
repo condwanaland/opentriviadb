@@ -1,9 +1,3 @@
-library(httr)
-library(jsonlite)
-library(tidyr)
-#qs <- GET("https://opentdb.com/api.php?amount=20")
-
-
 #' parse_raw_data
 #'
 #' Parses the initial response from the API call. Output can have either 6 columns (boolean question) or 8 columns (multiple choice question).
@@ -23,6 +17,18 @@ parse_raw_data <- function(unparsed_data){
   return(dat)
 }
 
+#' add_trivia_class
+#'
+#' Inspects the dimensions of the returned data to determine whether the question is a multiple choice or a boolean question. This is only ever called internally
+#'
+#' The API returns with a field for the correct answer, and then either 1 (boolean) or 3 (multiple choice) fields for the incorrect answers. Thus, you can determine what type of question it is by inspecting the dimensions.
+#'
+#' Since the two types of questions have different fields, a different class is assigned for each type. This is then passed to a relevant s3 method to parse this data into a common form with a 'correct answer' field and an 'incorrect answers' field
+#'
+#' @param parsed_data The output of `parse_raw_data`
+#'
+#' @return A modified dataframe (has classes added)
+#'
 add_trivia_class <- function(parsed_data) {
   parsed_class <- lapply(parsed_data, function(x){
     dims <- dim(x)
@@ -40,9 +46,6 @@ add_trivia_class <- function(parsed_data) {
   })
 }
 
-# parsed <- parse_raw_data(qs)
-# parsed_class <- add_trivia_class(parsed)
-# parsed_data <- lapply(parsed_class, parse_trivia_df)
 
 
 

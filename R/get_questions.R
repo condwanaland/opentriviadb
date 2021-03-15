@@ -1,3 +1,16 @@
+#' get_questions
+#'
+#' Document
+#'
+#' @param number
+#' @param category
+#' @param difficulty
+#' @param type
+#'
+#' @return
+#' @export
+#'
+#' @examples
 get_questions <- function(number=10,
                           category,
                           difficulty = c("any", "easy", "medium", "hard"),
@@ -14,7 +27,7 @@ get_questions <- function(number=10,
 
   # Hit API
   #api_reponse <- httr::RETRY(GET, api_url)
-  api_response <- GET(api_url)
+  api_response <- httr::GET(api_url)
 
   # Parse Response
   parsed <- parse_raw_data(api_response)
