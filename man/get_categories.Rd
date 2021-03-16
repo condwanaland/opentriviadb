@@ -13,6 +13,6 @@ A 2 column dataframe of category and id
 Get all available categories and their ids
 }
 \examples{
-library(triviaq)
+library(opentriviadb)
 get_categories()
 }

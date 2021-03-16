@@ -2,15 +2,17 @@
 #'
 #' Document
 #'
-#' @param number
-#' @param category
-#' @param difficulty
-#' @param type
+#' @param number Number of questions to return. Max of 50.
+#' @param category Category of questions. Leave blank for random categories.
+#' @param difficulty Difficulty of questions.
+#' @param type Multiple choice or true/false questions.
 #'
-#' @return
+#' @return Dataframe of questions and answers
 #' @export
 #'
 #' @examples
+#' library(opentriviadb)
+#' dat <- get_questions(2, "General Knowledge", "medium", "boolean")
 get_questions <- function(number=10,
                           category,
                           difficulty = c("any", "easy", "medium", "hard"),

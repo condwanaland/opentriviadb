@@ -12,11 +12,21 @@ get_questions(
 )
 }
 \arguments{
-\item{type}{}
+\item{number}{Number of questions to return. Max of 50.}
+
+\item{category}{Category of questions. Leave blank for random categories.}
+
+\item{difficulty}{Difficulty of questions.}
+
+\item{type}{Multiple choice or true/false questions.}
 }
 \value{
-
+Dataframe of questions and answers
 }
 \description{
 Document
+}
+\examples{
+library(opentriviadb)
+dat <- get_questions(2, "General Knowledge", "medium", "boolean")
 }

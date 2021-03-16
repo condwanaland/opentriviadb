@@ -6,9 +6,10 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of opentriviadb is to provide an interface to the [Open Trivia
-Database](https://opentdb.com/). You can access and download samples of
-the questions available and make them available from within R.
+The goal of opentriviadb is to provide an R interface to the [Open
+Trivia Database](https://opentdb.com/). You can access and download
+samples of the questions available and make them available from within
+R.
 
 ## Installation
 
@@ -29,49 +30,49 @@ library(opentriviadb)
 dat <- get_questions(number = 10)
 dat
 #>                      category     type difficulty
-#> 1           General Knowledge multiple     medium
-#> 2  Entertainment: Video Games multiple       hard
-#> 3                    Vehicles  boolean     medium
-#> 4        Entertainment: Music multiple     medium
-#> 5  Entertainment: Video Games multiple       hard
-#> 6                     History multiple     medium
-#> 7  Entertainment: Video Games multiple       easy
-#> 8        Science: Mathematics  boolean       easy
-#> 9       Entertainment: Comics multiple     medium
-#> 10 Entertainment: Video Games multiple     medium
-#>                                                                                                                               question
-#> 1                                                                   According to the BBPA, what is the most common pub name in the UK?
-#> 2                             In the original &quot;Super Mario Bros.&quot;, what is the acceleration of Mario if he was in free fall?
-#> 3                                                                      When BMW was established in 1916, it was producing automobiles.
-#> 4  What was the title of Sakamoto Kyu&#039;s song &quot;Ue o Muite Arukou&quot; (I Look Up As I Walk) changed to in the United States?
-#> 5                                                                 In TF2 Lore, what are the names of the Heavy&#039;s younger sisters?
-#> 6                                                            Which of the following snipers has the highest amount of confirmed kills?
-#> 7                                                                                                     When was Left 4 Dead 2 released?
-#> 8                                                                    An equilateral triangle always has every angle measuring 60&deg;.
-#> 9                                                                What is the real name of the &quot;Master Of Magnetism&quot; Magneto?
-#> 10                                                                            What is the AK-47&#039;s name in Counter Strike: Source?
-#>                                                           possible_answers
-#> 1                        Red Lion; Royal Oak; White Hart; King&#039;s Head
-#> 2                         91.28 m/s^2; 110  m/s^2; 9.42  m/s^2; 4.4  m/s^2
-#> 3                                                               True/False
-#> 4                                          Sukiyaki; Takoyaki; Sushi; Oden
-#> 5  Yana and Bronislava; Gaba and Anna; Yanna and Gaba; Anna and Bronislava
-#> 6         Simo H&auml;yh&auml;; Chris Kyle; Vasily Zaytsev; Craig Harrison
-#> 7         November 17, 2009; May 3, 2008; November 30, 2009; June 30, 2010
-#> 8                                                               True/False
-#> 9          Max Eisenhardt; Charles Xavier; Pietro Maximoff; Johann Schmidt
-#> 10                                                 CV-47; AK-74; AK; CZ-75
-#>          correct_answer
-#> 1              Red Lion
-#> 2           91.28 m/s^2
-#> 3                 False
-#> 4              Sukiyaki
-#> 5   Yana and Bronislava
-#> 6  Simo H&auml;yh&auml;
-#> 7     November 17, 2009
-#> 8                  True
-#> 9        Max Eisenhardt
-#> 10                CV-47
+#> 1                         Art multiple       easy
+#> 2                     History multiple     medium
+#> 3          Science: Computers multiple     medium
+#> 4  Entertainment: Video Games multiple     medium
+#> 5  Entertainment: Video Games multiple       easy
+#> 6            Science & Nature  boolean       easy
+#> 7                     Animals multiple       hard
+#> 8  Entertainment: Video Games multiple       hard
+#> 9                   Geography multiple     medium
+#> 10        Entertainment: Film multiple     medium
+#>                                                                                                                                    question
+#> 1                                                                                                                Who painted the Mona Lisa?
+#> 2                                                                                      Who was the first explorer to sail to North America?
+#> 3                                                              Which one of these is not an official development name for a Ubuntu release?
+#> 4                                                                            What was the name of the first MMORPG to popularize the genre?
+#> 5                                                                                                          When was Left 4 Dead 2 released?
+#> 6                                                                                          An average human can go two weeks without water.
+#> 7                                                                                          Which species is a &quot;mountain chicken&quot;?
+#> 8  In the &quot;Ace Attorney&quot; series, who was the truly responsible of the forging of the autopsy report of the pivotal IS-7 incident?
+#> 9                                                                    What is the northernmost human settlement with year round inhabitants?
+#> 10                                                                              Johnny Depp made his big-screen acting debut in which film?
+#>                                                                              possible_answers
+#> 1                            Leonardo da Vinci; Pablo Picasso; Claude Monet; Vincent van Gogh
+#> 2                    Leif Erikson; Christopher Columbus; Amerigo Vespucci; Ferdinand Magellan
+#> 3                                  Mystic Mansion; Trusty Tahr; Utopic Unicorn; Wily Werewolf
+#> 4                                   Ultima Online; World of Warcraft; Meridian 59; Guild Wars
+#> 5                            November 17, 2009; May 3, 2008; November 30, 2009; June 30, 2010
+#> 6                                                                                  True/False
+#> 7                                                                   Frog; Chicken; Horse; Fly
+#> 8                 Bansai Ichiyanagi; Manfred Von Karma; Gregory Edgeworth; Tateyuki Shigaraki
+#> 9  Alert, Canada; Nagurskoye, Russia; McMurdo Station, Antarctica ; Honningsv&aring;g, Norway
+#> 10                 A Nightmare on Elm Street; My Bloody Valentine; Halloween; Friday the 13th
+#>               correct_answer
+#> 1          Leonardo da Vinci
+#> 2               Leif Erikson
+#> 3             Mystic Mansion
+#> 4              Ultima Online
+#> 5          November 17, 2009
+#> 6                      False
+#> 7                       Frog
+#> 8          Bansai Ichiyanagi
+#> 9              Alert, Canada
+#> 10 A Nightmare on Elm Street
 ```
 
 You can control the category, difficulty, and type (multiple
@@ -91,38 +92,38 @@ dat
 #> 8    Sports multiple       easy
 #> 9    Sports multiple       easy
 #> 10   Sports multiple       easy
-#>                                                                                                                                  question
-#> 1                                                                        How many soccer players should be on the field at the same time?
-#> 2                                                                Which driver has been the Formula 1 world champion for a record 7 times?
-#> 3                                                           What was the final score of the Germany vs. Brazil 2014 FIFA World Cup match?
-#> 4                                                           Which city did the former NHL team &quot;The Nordiques&quot; originiate from?
-#> 5  This Canadian television sportscaster is known for his &quot;Hockey Night in Canada&quot; role, a commentary show during hockey games.
-#> 6                                                                              What is the name of Manchester United&#039;s home stadium?
-#> 7                                                    Who won the premier league title in the 2015-2016 season following a fairy tale run?
-#> 8                                                                            The Los Angeles Dodgers were originally from what U.S. city?
-#> 9                                                                          Who won the 2017 Formula One World Drivers&#039; Championship?
-#> 10                                                                                             Which two teams played in Super Bowl XLII?
+#>                                                                         question
+#> 1                  In golf, what name is given to a hole score of two under par?
+#> 2                               In what sport is a &quot;shuttlecock&quot; used?
+#> 3                              Which country has hosted the 2018 FIFA World Cup?
+#> 4       Which driver has been the Formula 1 world champion for a record 7 times?
+#> 5                                                What team won the 2016 MLS Cup?
+#> 6                       What year did the New Orleans Saints win the Super Bowl?
+#> 7                 What team did England beat to win in the 1966 World Cup final?
+#> 8       In bowling, what is the term used for getting three consecutive strikes?
+#> 9  Who is often called &quot;the Maestro&quot; in the men&#039;s tennis circuit?
+#> 10                                    Which two teams played in Super Bowl XLII?
 #>                                                                                                                                                                                                  possible_answers
-#> 1                                                                                                                                                                                                  22; 20; 24; 26
-#> 2                                                                                                                                                    Michael Schumacher; Ayrton Senna; Fernando Alonso; Jim Clark
-#> 3                                                                                                                                                                                     7 - 1; 0 - 1; 3 - 4; 16 - 0
-#> 4                                                                                                                                                                        Quebec City; Houston; Montreal; New York
-#> 5                                                                                                                                                        Don Cherry; Don McKellar; Don Taylor ; Donald Sutherland
-#> 6                                                                                                                                                Old Trafford; Anfield; City of Manchester Stadium; St James Park
-#> 7                                                                                                                                                          Leicester City; Tottenham Hotspur; Watford; Stoke City
-#> 8                                                                                                                                                                            Brooklyn; Las Vegas; Boston; Seattle
-#> 9                                                                                                                                                  Lewis Hamilton; Sebastian Vettel; Nico Rosberg; Max Verstappen
+#> 1                                                                                                                                                                                 Eagle; Birdie; Bogey; Albatross
+#> 2                                                                                                                                                                         Badminton; Table Tennis; Rugby; Cricket
+#> 3                                                                                                                                                                    Russia; Germany; United States; Saudi Arabia
+#> 4                                                                                                                                                    Michael Schumacher; Ayrton Senna; Fernando Alonso; Jim Clark
+#> 5                                                                                                                                                  Seattle Sounders; Colorado Rapids; Toronto FC; Montreal Impact
+#> 6                                                                                                                                                                                          2010; 2008; 2009; 2011
+#> 7                                                                                                                                                                    West Germany; Soviet Union; Portugal; Brazil
+#> 8                                                                                                                                                                                 Turkey; Flamingo; Birdie; Eagle
+#> 9                                                                                                                                                          Roger Federer; Bill Tilden; Boris Becker; Pete Sampras
 #> 10 The New York Giants &amp; The New England Patriots; The Green Bay Packers &amp; The Pittsburgh Steelers; The Philadelphia Eagles &amp; The New England Patriots; The Seattle Seahawks &amp; The Denver Broncos
 #>                                        correct_answer
-#> 1                                                  22
-#> 2                                  Michael Schumacher
-#> 3                                               7 - 1
-#> 4                                         Quebec City
-#> 5                                          Don Cherry
-#> 6                                        Old Trafford
-#> 7                                      Leicester City
-#> 8                                            Brooklyn
-#> 9                                      Lewis Hamilton
+#> 1                                               Eagle
+#> 2                                           Badminton
+#> 3                                              Russia
+#> 4                                  Michael Schumacher
+#> 5                                    Seattle Sounders
+#> 6                                                2010
+#> 7                                        West Germany
+#> 8                                              Turkey
+#> 9                                       Roger Federer
 #> 10 The New York Giants &amp; The New England Patriots
 ```
 

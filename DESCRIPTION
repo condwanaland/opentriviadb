@@ -2,11 +2,13 @@ Package: opentriviadb
 Type: Package
 Title: Interface to the Open Trivia Database
 Version: 1.0.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: GPL (>= 3)
+Author: Conor Neilson
+Maintainer: Conor Neilson <condwanaland@gmail.com>
+Description: The 'Open Trivia Database'<https://opentdb.com/> is a open source,
+    user contributed, database of trivia questions and answers. This package 
+    provides an interface to download and access questions and answers from
+    within R.
+License: CC0
 Encoding: UTF-8
 LazyData: true
 Suggests: 

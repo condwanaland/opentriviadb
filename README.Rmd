@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of opentriviadb is to provide an interface to the [Open Trivia Database](https://opentdb.com/). You can access and download samples of the questions available and make them available from within R.
+The goal of opentriviadb is to provide an R interface to the [Open Trivia Database](https://opentdb.com/). You can access and download samples of the questions available and make them available from within R.
 
 ## Installation
 

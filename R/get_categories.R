@@ -6,7 +6,7 @@
 #' @export
 #'
 #' @examples
-#' library(triviaq)
+#' library(opentriviadb)
 #' get_categories()
 get_categories <- function(){
   cats <- httr::GET("https://opentdb.com/api_category.php")

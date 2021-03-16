@@ -1,4 +1,4 @@
 library(testthat)
-library(triviaq)
+library(opentriviadb)
 
-test_check("triviaq")
+test_check("opentriviadb")
