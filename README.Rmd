@@ -13,33 +13,27 @@ knitr::opts_chunk$set(
 )
 ```
 
-# triviaq
+# opentriviadb
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of triviaq is to provide an interface to the [Open Trivia Database](https://opentdb.com/). You can access and download samples of the questions available and make them available from within R.
+The goal of opentriviadb is to provide an interface to the [Open Trivia Database](https://opentdb.com/). You can access and download samples of the questions available and make them available from within R.
 
 ## Installation
 
-You can install the released version of triviaq from [CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("triviaq")
-```
-
-And the development version from [GitHub](https://github.com/) with:
+You can install the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("condwanaland/triviaq")
+devtools::install_github("condwanaland/opentriviadb")
 ```
 ## Example
 
 To download questions, simply call `get_questions()`
 
 ```{r example}
-library(triviaq)
+library(opentriviadb)
 dat <- get_questions(number = 10)
 dat
 ```
@@ -51,7 +45,7 @@ dat <- get_questions(10, category = "Sports", difficulty = "easy", type = "multi
 dat
 ```
 
-To view all available categories, `triviaq` provides a helper function `get_categories`, which provides a dataframe of all available categories.
+To view all available categories, `opentriviadb` provides a helper function `get_categories`, which provides a dataframe of all available categories.
 
 ```{r}
 categories <- get_categories()

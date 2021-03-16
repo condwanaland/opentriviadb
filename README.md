@@ -1,29 +1,23 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# triviaq
+# opentriviadb
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of triviaq is to provide an interface to the [Open Trivia
+The goal of opentriviadb is to provide an interface to the [Open Trivia
 Database](https://opentdb.com/). You can access and download samples of
 the questions available and make them available from within R.
 
 ## Installation
 
-You can install the released version of triviaq from
-[CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("triviaq")
-```
-
-And the development version from [GitHub](https://github.com/) with:
+You can install the development version from
+[GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("condwanaland/triviaq")
+devtools::install_github("condwanaland/opentriviadb")
 ```
 
 ## Example
@@ -31,53 +25,53 @@ devtools::install_github("condwanaland/triviaq")
 To download questions, simply call `get_questions()`
 
 ``` r
-library(triviaq)
+library(opentriviadb)
 dat <- get_questions(number = 10)
 dat
 #>                      category     type difficulty
-#> 1  Entertainment: Video Games multiple     medium
-#> 2         Entertainment: Film multiple     medium
-#> 3   Entertainment: Television multiple     medium
-#> 4           General Knowledge  boolean     medium
-#> 5        Entertainment: Music multiple       easy
-#> 6            Science: Gadgets multiple       easy
-#> 7            Science & Nature multiple     medium
-#> 8                      Sports multiple       easy
-#> 9  Entertainment: Video Games  boolean       easy
-#> 10 Entertainment: Video Games  boolean     medium
-#>                                                                                        question
-#> 1                             Who was the mascot of SEGA before &quot;Sonic the Hedgehog&quot;?
-#> 2                     Who voiced the character Draco in the 1996 movie &#039;DragonHeart&#039;?
-#> 3  In the original Doctor Who series (1963), fourth doctor Tom Baker&#039;s scarf was how long?
-#> 4                                                    You are allowed to sell your soul on eBay.
-#> 5                              In Mean Girls, who has breasts that tell when it&#039;s raining?
-#> 6                                                                    When was the DVD invented?
-#> 7                                   What is the largest living organism currently known to man?
-#> 8                                            Which player holds the NHL record of 2,857 points?
-#> 9                                        There are 2 player roles in Trouble in Terrorist Town.
-#> 10                           In the Resident Evil series, Leon S. Kennedy is a member of STARS.
-#>                                                  possible_answers
-#> 1                              Alex Kidd; Opa Opa; NiGHTS; Ristar
-#> 2  Sean Connery; Dennis Quaid; Pete Postlethwaite; Brian Thompson
-#> 3                         7 Meters; 10 Meters; 2 Meters; 5 Meters
-#> 4                                                      True/False
-#> 5           Karen Smith; Gretchen Weiners; Janice Ian; Cady Heron
-#> 6                                          1995; 2000; 1990; 1980
-#> 7          Honey Fungus; Blue Whale; Redwood Tree; The Coral Reef
-#> 8       Wayne Gretzky; Mario Lemieux ; Sidney Crosby; Gordie Howe
-#> 9                                                      True/False
-#> 10                                                     True/False
-#>    correct_answer
-#> 1       Alex Kidd
-#> 2    Sean Connery
-#> 3        7 Meters
-#> 4           False
-#> 5     Karen Smith
-#> 6            1995
-#> 7    Honey Fungus
-#> 8   Wayne Gretzky
-#> 9           False
-#> 10          False
+#> 1           General Knowledge multiple     medium
+#> 2  Entertainment: Video Games multiple       hard
+#> 3                    Vehicles  boolean     medium
+#> 4        Entertainment: Music multiple     medium
+#> 5  Entertainment: Video Games multiple       hard
+#> 6                     History multiple     medium
+#> 7  Entertainment: Video Games multiple       easy
+#> 8        Science: Mathematics  boolean       easy
+#> 9       Entertainment: Comics multiple     medium
+#> 10 Entertainment: Video Games multiple     medium
+#>                                                                                                                               question
+#> 1                                                                   According to the BBPA, what is the most common pub name in the UK?
+#> 2                             In the original &quot;Super Mario Bros.&quot;, what is the acceleration of Mario if he was in free fall?
+#> 3                                                                      When BMW was established in 1916, it was producing automobiles.
+#> 4  What was the title of Sakamoto Kyu&#039;s song &quot;Ue o Muite Arukou&quot; (I Look Up As I Walk) changed to in the United States?
+#> 5                                                                 In TF2 Lore, what are the names of the Heavy&#039;s younger sisters?
+#> 6                                                            Which of the following snipers has the highest amount of confirmed kills?
+#> 7                                                                                                     When was Left 4 Dead 2 released?
+#> 8                                                                    An equilateral triangle always has every angle measuring 60&deg;.
+#> 9                                                                What is the real name of the &quot;Master Of Magnetism&quot; Magneto?
+#> 10                                                                            What is the AK-47&#039;s name in Counter Strike: Source?
+#>                                                           possible_answers
+#> 1                        Red Lion; Royal Oak; White Hart; King&#039;s Head
+#> 2                         91.28 m/s^2; 110  m/s^2; 9.42  m/s^2; 4.4  m/s^2
+#> 3                                                               True/False
+#> 4                                          Sukiyaki; Takoyaki; Sushi; Oden
+#> 5  Yana and Bronislava; Gaba and Anna; Yanna and Gaba; Anna and Bronislava
+#> 6         Simo H&auml;yh&auml;; Chris Kyle; Vasily Zaytsev; Craig Harrison
+#> 7         November 17, 2009; May 3, 2008; November 30, 2009; June 30, 2010
+#> 8                                                               True/False
+#> 9          Max Eisenhardt; Charles Xavier; Pietro Maximoff; Johann Schmidt
+#> 10                                                 CV-47; AK-74; AK; CZ-75
+#>          correct_answer
+#> 1              Red Lion
+#> 2           91.28 m/s^2
+#> 3                 False
+#> 4              Sukiyaki
+#> 5   Yana and Bronislava
+#> 6  Simo H&auml;yh&auml;
+#> 7     November 17, 2009
+#> 8                  True
+#> 9        Max Eisenhardt
+#> 10                CV-47
 ```
 
 You can control the category, difficulty, and type (multiple
@@ -98,42 +92,42 @@ dat
 #> 9    Sports multiple       easy
 #> 10   Sports multiple       easy
 #>                                                                                                                                  question
-#> 1                                                              The Rio 2016 Summer Olympics held it&#039;s closing ceremony on what date?
-#> 2                    In Baseball, how many times does the ball have to be pitched outside of the strike zone before the batter is walked?
-#> 3                                                                                                         What team won the 2016 MLS Cup?
-#> 4  This Canadian television sportscaster is known for his &quot;Hockey Night in Canada&quot; role, a commentary show during hockey games.
-#> 5                                                                                    Which team has won the most Stanley Cups in the NHL?
-#> 6                                                                                  When was the first official international game played?
-#> 7                                                                   What is the most common type of pitch thrown by pitchers in baseball?
-#> 8                                                                          What team did England beat to win in the 1966 World Cup final?
-#> 9                                                   Which African American is in part responsible for integrating  Major League baseball?
-#> 10                                                                &quot;Stadium of Light&quot; is the home stadium for which soccer team?
-#>                                                                  possible_answers
-#> 1                                      August 21; August 23; August 19; August 17
-#> 2                                                                      4; 1; 2; 3
-#> 3                  Seattle Sounders; Colorado Rapids; Toronto FC; Montreal Impact
-#> 4                        Don Cherry; Don McKellar; Don Taylor ; Donald Sutherland
-#> 5  Montreal Canadians; Chicago Blackhawks; Toronto Maple Leafs; Detroit Red Wings
-#> 6                                                          1872; 1880; 1863; 1865
-#> 7                                         Fastball; Slowball; Screwball; Palmball
-#> 8                                    West Germany; Soviet Union; Portugal; Brazil
-#> 9                     Jackie Robinson; Curt Flood; Roy Campanella; Satchell Paige
-#> 10           Sunderland FC; Barcelona FC; Paris Saints-Germain; Manchester United
-#>        correct_answer
-#> 1           August 21
-#> 2                   4
-#> 3    Seattle Sounders
-#> 4          Don Cherry
-#> 5  Montreal Canadians
-#> 6                1872
-#> 7            Fastball
-#> 8        West Germany
-#> 9     Jackie Robinson
-#> 10      Sunderland FC
+#> 1                                                                        How many soccer players should be on the field at the same time?
+#> 2                                                                Which driver has been the Formula 1 world champion for a record 7 times?
+#> 3                                                           What was the final score of the Germany vs. Brazil 2014 FIFA World Cup match?
+#> 4                                                           Which city did the former NHL team &quot;The Nordiques&quot; originiate from?
+#> 5  This Canadian television sportscaster is known for his &quot;Hockey Night in Canada&quot; role, a commentary show during hockey games.
+#> 6                                                                              What is the name of Manchester United&#039;s home stadium?
+#> 7                                                    Who won the premier league title in the 2015-2016 season following a fairy tale run?
+#> 8                                                                            The Los Angeles Dodgers were originally from what U.S. city?
+#> 9                                                                          Who won the 2017 Formula One World Drivers&#039; Championship?
+#> 10                                                                                             Which two teams played in Super Bowl XLII?
+#>                                                                                                                                                                                                  possible_answers
+#> 1                                                                                                                                                                                                  22; 20; 24; 26
+#> 2                                                                                                                                                    Michael Schumacher; Ayrton Senna; Fernando Alonso; Jim Clark
+#> 3                                                                                                                                                                                     7 - 1; 0 - 1; 3 - 4; 16 - 0
+#> 4                                                                                                                                                                        Quebec City; Houston; Montreal; New York
+#> 5                                                                                                                                                        Don Cherry; Don McKellar; Don Taylor ; Donald Sutherland
+#> 6                                                                                                                                                Old Trafford; Anfield; City of Manchester Stadium; St James Park
+#> 7                                                                                                                                                          Leicester City; Tottenham Hotspur; Watford; Stoke City
+#> 8                                                                                                                                                                            Brooklyn; Las Vegas; Boston; Seattle
+#> 9                                                                                                                                                  Lewis Hamilton; Sebastian Vettel; Nico Rosberg; Max Verstappen
+#> 10 The New York Giants &amp; The New England Patriots; The Green Bay Packers &amp; The Pittsburgh Steelers; The Philadelphia Eagles &amp; The New England Patriots; The Seattle Seahawks &amp; The Denver Broncos
+#>                                        correct_answer
+#> 1                                                  22
+#> 2                                  Michael Schumacher
+#> 3                                               7 - 1
+#> 4                                         Quebec City
+#> 5                                          Don Cherry
+#> 6                                        Old Trafford
+#> 7                                      Leicester City
+#> 8                                            Brooklyn
+#> 9                                      Lewis Hamilton
+#> 10 The New York Giants &amp; The New England Patriots
 ```
 
-To view all available categories, `triviaq` provides a helper function
-`get_categories`, which provides a dataframe of all available
+To view all available categories, `opentriviadb` provides a helper
+function `get_categories`, which provides a dataframe of all available
 categories.
 
 ``` r

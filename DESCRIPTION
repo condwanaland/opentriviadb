@@ -1,6 +1,6 @@
-Package: triviaq
+Package: opentriviadb
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Interface to the Open Trivia Database
 Version: 1.0.0
 Author: Who wrote it
 Maintainer: The package maintainer <yourself@somewhere.net>
