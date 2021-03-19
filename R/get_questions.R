@@ -48,6 +48,7 @@ get_questions <- function(number=10,
 #'
 #' Builds a string for the category block of the API
 #'
+#' @noRd
 #' @param category The trivia category
 #' @importFrom rlang .data
 make_category_string <- function(category){

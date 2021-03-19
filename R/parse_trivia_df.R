@@ -5,6 +5,7 @@
 #' @param data A dataframe with either the 'trivia_multi_choice' or 'trivia_boolean' class. Usually this is the output of the `add_trivia_class` function
 #'
 #' @importFrom dplyr starts_with
+#' @noRd
 #'
 #' @return a list of dataframes
 parse_trivia_df <- function(data){

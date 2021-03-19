@@ -3,6 +3,7 @@
 #' Parses the initial response from the API call. Output can have either 6 columns (boolean question) or 8 columns (multiple choice question).
 #'
 #' @param unparsed_data The result of a `GET` call to the OpenTriviaDB API
+#' @noRd
 #'
 #' @return A dataframe of either 6 or 8 columns
 #'
@@ -26,6 +27,7 @@ parse_raw_data <- function(unparsed_data){
 #' Since the two types of questions have different fields, a different class is assigned for each type. This is then passed to a relevant s3 method to parse this data into a common form with a 'correct answer' field and an 'incorrect answers' field
 #'
 #' @param parsed_data The output of `parse_raw_data`
+#' @noRd
 #'
 #' @return A modified dataframe (has classes added)
 #'

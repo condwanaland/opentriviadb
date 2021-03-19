@@ -4,7 +4,7 @@
 \name{opentriviadb-package}
 \alias{opentriviadb}
 \alias{opentriviadb-package}
-\title{opentriviadb: Interface to the Open Trivia Database}
+\title{opentriviadb: Interface to the 'Open Trivia Database'}
 \description{
 The 'Open Trivia Database'<https://opentdb.com/> is a open source,
     user contributed, database of trivia questions and answers. This package 

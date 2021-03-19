@@ -1,6 +1,6 @@
 Package: opentriviadb
 Type: Package
-Title: Interface to the Open Trivia Database
+Title: Interface to the 'Open Trivia Database'
 Version: 1.0.0
 Author: Conor Neilson
 Maintainer: Conor Neilson <condwanaland@gmail.com>
