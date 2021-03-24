@@ -28,5 +28,7 @@ Document
 }
 \examples{
 library(opentriviadb)
-dat <- get_questions(2, "General Knowledge", "medium", "boolean")
+if (dang::isConnected(site = "opentdb.com")){
+   dat <- get_questions(2, "General Knowledge", "medium", "boolean")
+}
 }

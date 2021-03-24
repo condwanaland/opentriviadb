@@ -7,8 +7,16 @@
 #'
 #' @examples
 #' library(opentriviadb)
-#' get_categories()
+#' if (isConnected(site = "opentdb.com")){
+#'    cats <- get_categories()
+#' }
+#'
 get_categories <- function(){
+
+  if (!isConnected(site = "opentdb.com")){
+    message("No Internet Connection")
+    return(NULL)
+  }
   cats <- httr::GET("https://opentdb.com/api_category.php")
   cats <- httr::content(cats, 'parsed')
   cats <- cats$trivia_categories

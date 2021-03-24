@@ -2,7 +2,7 @@ Package: opentriviadb
 Type: Package
 Title: Interface to the 'Open Trivia Database'
 Version: 1.0.0
-Author: Conor Neilson
+Author: Conor Neilson, with contributions by Dirk Eddelbuettel
 Maintainer: Conor Neilson <condwanaland@gmail.com>
 Description: The 'Open Trivia Database'<https://opentdb.com/> is a open source,
     user contributed, database of trivia questions and answers. This package 

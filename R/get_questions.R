@@ -12,7 +12,9 @@
 #'
 #' @examples
 #' library(opentriviadb)
-#' dat <- get_questions(2, "General Knowledge", "medium", "boolean")
+#' if (isConnected(site = "opentdb.com")){
+#'    dat <- get_questions(2, "General Knowledge", "medium", "boolean")
+#' }
 get_questions <- function(number=10,
                           category,
                           difficulty = c("any", "easy", "medium", "hard"),
@@ -27,9 +29,18 @@ get_questions <- function(number=10,
 
   api_url <- create_api_url(number, category, difficulty, type)
 
+  if (!isConnected(site = "opentdb.com")){
+    message("No Internet Connection")
+    return(NULL)
+  }
+
   # Hit API
   #api_reponse <- httr::RETRY(GET, api_url)
   api_response <- httr::GET(api_url)
+
+  if (httr::http_error(api_response)){
+    stop("API returned an error. Please try again")
+  }
 
   # Parse Response
   parsed <- parse_raw_data(api_response)

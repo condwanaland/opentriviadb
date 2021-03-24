@@ -1,4 +1,6 @@
 test_that("Category string generates correctly", {
+  skip_if_offline()
+  skip_on_cran()
   expect_equal(make_category_string(), "")
   expect_equal(make_category_string("General Knowledge"), "&category=9")
   expect_equal(make_category_string("Sports"), "&category=21")
@@ -21,6 +23,8 @@ test_that("Type string generates correctly", {
 })
 
 test_that("Create API URL works correctly", {
+  skip_if_offline()
+  skip_on_cran()
   expect_equal(
     create_api_url(2, "General Knowledge", "medium", "any"),
     "https://opentdb.com/api.php?amount=2&category=9&difficulty=medium")

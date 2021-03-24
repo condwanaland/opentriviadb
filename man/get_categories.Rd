@@ -14,5 +14,8 @@ Get all available categories and their ids
 }
 \examples{
 library(opentriviadb)
-get_categories()
+if (dang::isConnected(site = "opentdb.com")){
+   cats <- get_categories()
+}
+
 }
