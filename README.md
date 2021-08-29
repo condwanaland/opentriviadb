@@ -29,50 +29,50 @@ To download questions, simply call `get_questions()`
 library(opentriviadb)
 dat <- get_questions(number = 10)
 dat
-#>                      category     type difficulty
-#> 1                         Art multiple       easy
-#> 2                     History multiple     medium
-#> 3          Science: Computers multiple     medium
-#> 4  Entertainment: Video Games multiple     medium
-#> 5  Entertainment: Video Games multiple       easy
-#> 6            Science & Nature  boolean       easy
-#> 7                     Animals multiple       hard
-#> 8  Entertainment: Video Games multiple       hard
-#> 9                   Geography multiple     medium
-#> 10        Entertainment: Film multiple     medium
-#>                                                                                                                                    question
-#> 1                                                                                                                Who painted the Mona Lisa?
-#> 2                                                                                      Who was the first explorer to sail to North America?
-#> 3                                                              Which one of these is not an official development name for a Ubuntu release?
-#> 4                                                                            What was the name of the first MMORPG to popularize the genre?
-#> 5                                                                                                          When was Left 4 Dead 2 released?
-#> 6                                                                                          An average human can go two weeks without water.
-#> 7                                                                                          Which species is a &quot;mountain chicken&quot;?
-#> 8  In the &quot;Ace Attorney&quot; series, who was the truly responsible of the forging of the autopsy report of the pivotal IS-7 incident?
-#> 9                                                                    What is the northernmost human settlement with year round inhabitants?
-#> 10                                                                              Johnny Depp made his big-screen acting debut in which film?
-#>                                                                              possible_answers
-#> 1                            Leonardo da Vinci; Pablo Picasso; Claude Monet; Vincent van Gogh
-#> 2                    Leif Erikson; Christopher Columbus; Amerigo Vespucci; Ferdinand Magellan
-#> 3                                  Mystic Mansion; Trusty Tahr; Utopic Unicorn; Wily Werewolf
-#> 4                                   Ultima Online; World of Warcraft; Meridian 59; Guild Wars
-#> 5                            November 17, 2009; May 3, 2008; November 30, 2009; June 30, 2010
-#> 6                                                                                  True/False
-#> 7                                                                   Frog; Chicken; Horse; Fly
-#> 8                 Bansai Ichiyanagi; Manfred Von Karma; Gregory Edgeworth; Tateyuki Shigaraki
-#> 9  Alert, Canada; Nagurskoye, Russia; McMurdo Station, Antarctica ; Honningsv&aring;g, Norway
-#> 10                 A Nightmare on Elm Street; My Bloody Valentine; Halloween; Friday the 13th
-#>               correct_answer
-#> 1          Leonardo da Vinci
-#> 2               Leif Erikson
-#> 3             Mystic Mansion
-#> 4              Ultima Online
-#> 5          November 17, 2009
-#> 6                      False
-#> 7                       Frog
-#> 8          Bansai Ichiyanagi
-#> 9              Alert, Canada
-#> 10 A Nightmare on Elm Street
+#>                                 category     type difficulty
+#> 1                      General Knowledge  boolean       easy
+#> 2                   Entertainment: Music multiple       hard
+#> 3                      General Knowledge  boolean     medium
+#> 4             Entertainment: Video Games multiple       hard
+#> 5  Entertainment: Japanese Anime & Manga  boolean       easy
+#> 6                      General Knowledge multiple       hard
+#> 7                     Science: Computers  boolean     medium
+#> 8                              Mythology  boolean     medium
+#> 9             Entertainment: Video Games multiple     medium
+#> 10                               History multiple     medium
+#>                                                                                        question
+#> 1                                             The Great Wall of China is visible from the moon.
+#> 2                      How many members are there in the idol group &quot;&micro;&#039;s&quot;?
+#> 3                                                                   An eggplant is a vegetable.
+#> 4                                                                When was Steam first released?
+#> 5                             In Kill La Kill, the weapon of the main protagonist is a katana. 
+#> 6                                      What is the romanized Korean word for &quot;heart&quot;?
+#> 7                                                                      MacOS is based on Linux.
+#> 8                                           In Greek mythology, Hera is the goddess of harvest.
+#> 9  Who voices the infamous Citadel Station A.I known as S.H.O.D.A.N, in the System Shock games?
+#> 10                                  Which Nazi General was known as the &quot;Desert Fox&quot;?
+#>    correct_answer
+#> 1           False
+#> 2               9
+#> 3           False
+#> 4            2003
+#> 5           False
+#> 6         Simjang
+#> 7           False
+#> 8           False
+#> 9   Terri Brosius
+#> 10   Erwin Rommel
+#>                                                     possible_answers
+#> 1                                                         True/False
+#> 2                                                        9; 48; 6; 3
+#> 3                                                         True/False
+#> 4                                             2003; 2004; 2011; 2007
+#> 5                                                         True/False
+#> 6                                 Simjang; Aejeong; Jeongsin; Segseu
+#> 7                                                         True/False
+#> 8                                                         True/False
+#> 9              Terri Brosius;  Jennifer Hale; Jenn Taylor; Lori Alan
+#> 10 Erwin Rommel; Gerd von Rundstadt; Wilhelm Keitel; Heinz Guderian
 ```
 
 You can control the category, difficulty, and type (multiple
@@ -92,47 +92,46 @@ dat
 #> 8    Sports multiple       easy
 #> 9    Sports multiple       easy
 #> 10   Sports multiple       easy
-#>                                                                         question
-#> 1                  In golf, what name is given to a hole score of two under par?
-#> 2                               In what sport is a &quot;shuttlecock&quot; used?
-#> 3                              Which country has hosted the 2018 FIFA World Cup?
-#> 4       Which driver has been the Formula 1 world champion for a record 7 times?
-#> 5                                                What team won the 2016 MLS Cup?
-#> 6                       What year did the New Orleans Saints win the Super Bowl?
-#> 7                 What team did England beat to win in the 1966 World Cup final?
-#> 8       In bowling, what is the term used for getting three consecutive strikes?
-#> 9  Who is often called &quot;the Maestro&quot; in the men&#039;s tennis circuit?
-#> 10                                    Which two teams played in Super Bowl XLII?
-#>                                                                                                                                                                                                  possible_answers
-#> 1                                                                                                                                                                                 Eagle; Birdie; Bogey; Albatross
-#> 2                                                                                                                                                                         Badminton; Table Tennis; Rugby; Cricket
-#> 3                                                                                                                                                                    Russia; Germany; United States; Saudi Arabia
-#> 4                                                                                                                                                    Michael Schumacher; Ayrton Senna; Fernando Alonso; Jim Clark
-#> 5                                                                                                                                                  Seattle Sounders; Colorado Rapids; Toronto FC; Montreal Impact
-#> 6                                                                                                                                                                                          2010; 2008; 2009; 2011
-#> 7                                                                                                                                                                    West Germany; Soviet Union; Portugal; Brazil
-#> 8                                                                                                                                                                                 Turkey; Flamingo; Birdie; Eagle
-#> 9                                                                                                                                                          Roger Federer; Bill Tilden; Boris Becker; Pete Sampras
-#> 10 The New York Giants &amp; The New England Patriots; The Green Bay Packers &amp; The Pittsburgh Steelers; The Philadelphia Eagles &amp; The New England Patriots; The Seattle Seahawks &amp; The Denver Broncos
-#>                                        correct_answer
-#> 1                                               Eagle
-#> 2                                           Badminton
-#> 3                                              Russia
-#> 4                                  Michael Schumacher
-#> 5                                    Seattle Sounders
-#> 6                                                2010
-#> 7                                        West Germany
-#> 8                                              Turkey
-#> 9                                       Roger Federer
-#> 10 The New York Giants &amp; The New England Patriots
+#>                                                                                                                question
+#> 1                                                                    Which team won the 2015-16 English Premier League?
+#> 2                                              Which driver has been the Formula 1 world champion for a record 7 times?
+#> 3                                                                         Which team won 2014 FIFA World Cup in Brazil?
+#> 4  In Baseball, how many times does the ball have to be pitched outside of the strike zone before the batter is walked?
+#> 5                                                                                       What team won the 2016 MLS Cup?
+#> 6                                 Which boxer was banned for taking a bite out of Evander Holyfield&#039;s ear in 1997?
+#> 7                                                 What is the most common type of pitch thrown by pitchers in baseball?
+#> 8                                  Who won the premier league title in the 2015-2016 season following a fairy tale run?
+#> 9                                                                            Who won the UEFA Champions League in 2017?
+#> 10                                  In the 2014 FIFA World Cup, what was the final score in the match Brazil - Germany?
+#>                                                  possible_answers
+#> 1           Leicester City; Liverpool; Cheslea; Manchester United
+#> 2    Michael Schumacher; Ayrton Senna; Fernando Alonso; Jim Clark
+#> 3                         Germany; Argentina; Brazil; Netherlands
+#> 4                                                      4; 1; 2; 3
+#> 5  Seattle Sounders; Colorado Rapids; Toronto FC; Montreal Impact
+#> 6      Mike Tyson; Roy Jones Jr.; Evander Holyfield; Lennox Lewis
+#> 7                         Fastball; Slowball; Screwball; Palmball
+#> 8          Leicester City; Tottenham Hotspur; Watford; Stoke City
+#> 9  Real Madrid C.F.; Atletico Madrid; AS Monaco FC; Juventus F.C.
+#> 10                                             1-7; 1-5; 1-6; 2-6
+#>        correct_answer
+#> 1      Leicester City
+#> 2  Michael Schumacher
+#> 3             Germany
+#> 4                   4
+#> 5    Seattle Sounders
+#> 6          Mike Tyson
+#> 7            Fastball
+#> 8      Leicester City
+#> 9    Real Madrid C.F.
+#> 10                1-7
 ```
 
-To view all available categories, `opentriviadb` provides a helper
-function `get_categories`, which provides a dataframe of all available
-categories.
+To view all available categories, `opentriviadb` provides a dataset
+`categories`, which provides all available categories.
 
 ``` r
-categories <- get_categories()
+data("categories")
 categories
 #>    id                            categories
 #> 1   9                     General Knowledge

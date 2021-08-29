@@ -67,7 +67,7 @@ make_category_string <- function(category){
     category_string <- ""
   }
   else{
-    data("categories", envir = environment())
+    utils::data("categories", envir = environment())
     cats <- dplyr::filter(categories, .data$categories == category)
     cats <- dplyr::select(cats, .data$id)
     cats <- cats[1,1]

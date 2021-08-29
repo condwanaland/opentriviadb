@@ -45,10 +45,10 @@ dat <- get_questions(10, category = "Sports", difficulty = "easy", type = "multi
 dat
 ```
 
-To view all available categories, `opentriviadb` provides a helper function `get_categories`, which provides a dataframe of all available categories.
+To view all available categories, `opentriviadb` provides a dataset `categories`, which provides all available categories.
 
 ```{r}
-categories <- get_categories()
+data("categories")
 categories
 ```
 
