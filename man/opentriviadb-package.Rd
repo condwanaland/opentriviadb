@@ -11,4 +11,12 @@ The 'Open Trivia Database'<https://opentdb.com/> is a open source,
     provides an interface to download and access questions and answers from
     within R.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/condwanaland/opentriviadb}
+  \item Report bugs at \url{https://github.com/condwanaland/opentriviadb/issues}
+}
+
+}
 \keyword{internal}
