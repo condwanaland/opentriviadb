@@ -7,24 +7,22 @@
 #'
 #' @examples
 #' library(opentriviadb)
-#' if (isConnected(site = "opentdb.com")){
-#'    cats <- get_categories()
-#' }
+#' get_categories()
 #'
-get_categories <- function(){
+#get_categories <- function(){
 
-  if (!isConnected(site = "opentdb.com")){
-    message("No Internet Connection")
-    return(NULL)
-  }
-  cats <- httr::GET("https://opentdb.com/api_category.php")
-  cats <- httr::content(cats, 'parsed')
-  cats <- cats$trivia_categories
-  cats <- lapply(cats, as.data.frame)
-  cats <- dplyr::bind_rows(cats)
-  names(cats)[names(cats) == "name"] <- "categories"
+  # if (!isConnected()){
+  #   message("No Internet Connections")
+  #   return(NULL)
+  # }
+  # cats <- httr::GET("https://opentdb.com/api_category.php")
+  # cats <- httr::content(cats, 'parsed')
+  # cats <- cats$trivia_categories
+  # cats <- lapply(cats, as.data.frame)
+  # cats <- dplyr::bind_rows(cats)
+  # names(cats)[names(cats) == "name"] <- "categories"
 
-  return(cats)
-}
+#  data("categories")
 
-dat <- get_categories()
+#}
+

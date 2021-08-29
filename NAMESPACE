@@ -3,7 +3,6 @@
 S3method(parse_trivia_df,default)
 S3method(parse_trivia_df,trivia_boolean)
 S3method(parse_trivia_df,trivia_multi_choice)
-export(get_categories)
 export(get_questions)
 importFrom(dplyr,starts_with)
 importFrom(rlang,.data)

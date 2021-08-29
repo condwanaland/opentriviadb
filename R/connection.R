@@ -9,7 +9,7 @@
 ##' defauls to \code{http://www.opentdb.com}
 ##' @return A boolean value indicating networking status
 ##' @author Dirk Eddelbuettel
-isConnected <- function(site = "opentdb.com") {
+isConnected <- function(site = "https://opentdb.com/") {
   uoc <- function(site) {
     con <- url(site)                # need to assign so that we can close
     open(con)                       # in case of success we have a connection

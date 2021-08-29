@@ -12,8 +12,8 @@
 #'
 #' @examples
 #' library(opentriviadb)
-#' if (isConnected(site = "opentdb.com")){
-#'    dat <- get_questions(2, "General Knowledge", "medium", "boolean")
+#' if (curl::has_internet()){
+#' dat <- get_questions(2, "General Knowledge", "medium", "boolean")
 #' }
 get_questions <- function(number=10,
                           category,
@@ -29,8 +29,8 @@ get_questions <- function(number=10,
 
   api_url <- create_api_url(number, category, difficulty, type)
 
-  if (!isConnected(site = "opentdb.com")){
-    message("No Internet Connection")
+  if (!isConnected()){
+    message("The Open Trivia Database is currently unavailable. Please try again in a few minutes")
     return(NULL)
   }
 
@@ -67,8 +67,8 @@ make_category_string <- function(category){
     category_string <- ""
   }
   else{
-    cats <- get_categories()
-    cats <- dplyr::filter(cats, .data$categories == category)
+    data("categories", envir = environment())
+    cats <- dplyr::filter(categories, .data$categories == category)
     cats <- dplyr::select(cats, .data$id)
     cats <- cats[1,1]
     category_string <- paste0("&category=", cats)
